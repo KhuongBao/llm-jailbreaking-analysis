@@ -1,4 +1,3 @@
-from tqdm import tqdm
 from utils import chat, save_json, load_dataset, SAVE_PATH, MISTRAL_CLS_PROMPT, DEVICE
 from models import import_models
 
@@ -91,7 +90,7 @@ def run_experiment(num_intents, N, device, verbose = False, refine = True, qwen_
     uncensored_history = []
     censored_history = []
 
-    for i in tqdm(range(num_intents)):
+    for i in range(num_intents):
         data = ds['train'][i]
 
         # Uncensored model
